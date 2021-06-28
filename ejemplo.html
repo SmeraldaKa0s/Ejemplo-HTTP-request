@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*Desktop*/
+
+        body {
+            background-color: green;
+        }
+
+        h1 {
+            margin: 2rem;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            background-color: white;
+            padding: 2rem;
+            max-width: 1100px;
+            margin: 1rem auto;
+        }
+
+        .caja {
+            margin: auto;
+            border-radius: 0.5rem;
+            width: 10rem;
+            height: 10rem;
+            background-position: center;
+            background-image: url("https://placekitten.com/300/300");
+        }
+
+        .actions {
+            display: flex;
+            margin: auto;
+            width: fit-content;
+        }
+
+        .action {
+            padding: 1rem 1.5rem;
+            border: 0.1rem solid gray;
+            margin: 1rem;
+            border-radius: 0.4rem;
+            background-color: purple;
+            color: white;
+            text-decoration: none;
+        }
+
+        .principal {
+            border-radius: 50%;
+        }
+
+        /*Tablet*/
+        @media (max-width: 700px) {
+            body {
+                background-color: red;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+        }
+
+        /*Mobile*/
+        @media (max-width: 400px) {
+            body {
+                background-color: gray;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+        }
+
+        /*
+        max-width = HASTA  (se usa mas en desktop first)
+        min-width = A PARTIR DE (se usa mas en mobile first)
+        */
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo</h1>
+
+    <div class="container">
+        <div class="caja principal"></div>
+        <div class="actions">
+            <button class="action">Accion</button>
+            <a class="action" href="#">Accion2</a>
+        </div>
+
+        <div class="caja secundaria"></div>
+    </div>
+
+    <div class="container">
+        <form method="GET" action="https://challenge-meli-backend.herokuapp.com/api/items">
+            <label>Nombre</label> <input placeholder="buscate esta" name="q" required />
+            <input type="submit" value="Buscar" />
+        </form>
+    </div>
+
+
+
+    <!-- Leer sobre HTTP REQUEST, instalar Json Viewer
+    
+        method=GET    PIDE algo a una URL, y le pasa los valores como PARAMS o QUERY PARAMS en la URL ( ?nombre=leslie&apellido=ojeda )
+        method=POST   POSTEA un dato nuevo a cierta URL, le pasa los valores como FORM DATA o como BODY. 
+        ( 
+        Form Data:
+            nombre= leslie 
+            apellido = ojeda
+        )
+    
+    -->
+
+</body>
+
+</html>
